@@ -9,10 +9,11 @@ import visibilityIcon from "../assets/svg/visibilityIcon.svg";
 function SignUp() {
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
+    name: "",
     email: "",
     password: "",
   });
-  const { email, password } = formData;
+  const { name, email, password } = formData;
 
   const navigate = useNavigate();
 
@@ -27,10 +28,21 @@ function SignUp() {
     <>
       <div className="pageContainer">
         <header>
-          <p className="pageHeader">Welcome Back!</p>
+          <p className="pageHeader">Join our Community!</p>
         </header>
 
         <form>
+        <input
+            type="text"
+            className="nameInput"
+            placeholder="Name"
+            id="name"
+            value={name}
+            onChange={onChange}
+          />
+          
+          
+          
           <input
             type="email"
             className="emailInput"
@@ -62,9 +74,9 @@ function SignUp() {
             Forgot Password
           </Link>
 
-          <div className="signInBar">
-            <p className="signInText">Sign In</p>
-            <button className="signInButton">
+          <div className="signUpBar">
+            <p className="signUpText">Sign Up</p>
+            <button className="signUpButton">
               <ArrowRightIcon fill="#ffffff" width="34px" height="34px" />
             </button>
           </div>
@@ -72,8 +84,8 @@ function SignUp() {
 
         {/** Google OAuth */}
 
-        <Link to='/sign-up' className='registerLink'>
-            Sign Up Instead
+        <Link to='/sign-in' className='registerLink'>
+            Sign In Instead
         </Link>
       </div>
     </>
