@@ -61,7 +61,7 @@ function SignUp() {
         displayName: name,
       })
 
-      const formDataCopy = {...formData}
+      const formDataCopy = { ...formData }
       delete formDataCopy.password
       formDataCopy.timestamp = serverTimestamp()
 
