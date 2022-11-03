@@ -7,7 +7,7 @@ export const useAuthStatus = () => {
 
     const [loggedIn, setLoggedIn] = useState(false)
     const [checkingStatus, setCheckingStatus] = useState(true)
-    const isMounted = useRef(true)
+    const isMounted = useRef(true)  //returns object with current value set to false
     
 
     useEffect(() => {
@@ -22,9 +22,9 @@ export const useAuthStatus = () => {
         }
     
         return () => {
-          isMounted.current = false
+          isMounted.current = false    //async promise call must use useRef to check unmounted components to help with memory leaks?
         }
-      }, [isMounted])
+      }, [isMounted])  //dependecy array
     
       return { loggedIn, checkingStatus }
     }
