@@ -14,6 +14,8 @@ function Navbar() {
         }
     }
 
+    // there is dynamic conditioning that applies a darker color to the icon and the font if we are on the page of selected icon using the function
+    // pathMatchRoute and assignes a class which has been set in index.css. Note that index.css is not in the public folder.
   return (
     <footer className="navbar">
       <nav className="navbarNav">
