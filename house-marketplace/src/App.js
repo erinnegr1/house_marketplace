@@ -10,6 +10,7 @@ import {Navbar,
   SignIn, 
   SignUp, 
   PrivateRoute,
+  Category,
  } from './pages/index'
 
 
@@ -21,6 +22,7 @@ function App() {
         <Route path='/' element={ <Explore />}/>
         <Route path='/forgot-password' element={ <ForgotPassword />}/>
         <Route path='/offers' element={ <Offers />}/>
+        <Route path='/category/:categoryName' element={ <Category />}/>
         <Route path='/sign-in' element={ <SignIn/>}/>
         <Route path='/profile' element={<PrivateRoute />}>
             <Route path='/profile' element={<Profile />} />
